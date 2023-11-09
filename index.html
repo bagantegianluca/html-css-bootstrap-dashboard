@@ -15,28 +15,36 @@
 
 <body class="debug">
 
-    <div id="header">
-        <div class="d-flex justify-content-between p-3">
-            <div class="header-left d-flex align-items-center">
-                <img src="./img/duck.png" alt="duck" style="height: 60px;" class="me-4">
-                <ul class="list-unstyled d-none d-md-flex m-0">
-                    <li><a href="#" class="text-decoration-none text-light px-2">Catalogo libri</a></li>
-                    <li><a href="#" class="text-decoration-none text-secondary px-2">Anagrafica utenti</a></li>
-                    <li><a href="#" class="text-decoration-none text-secondary px-2">Storico prestiti</a></li>
-                    <li><a href="#" class="text-decoration-none text-secondary px-2">Help</a></li>
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+        <div class="container-fluid">
+            <img src="./img/duck.png" alt="duck" style="height: 60px;" class="me-4">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Catalogo libri</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Anagrafica utenti</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Storico prestiti</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Help</a>
+                    </li>
                 </ul>
-            </div>
-            <div class="header-right d-flex align-items-center">
-                <div class="search d-none d-md-flex">
-                    <input type="search" placeholder="Cerca..." class="border-1 border-dark-subtle rounded">
-                    <a href="#" class="btn btn-dark ms-2 border-1 border-white">Cerca</a>
-                </div>
-                <a href="#" class="d-md-none btn btn-dark border-1 border-secondary text-secondary">
-                    <i class="fa fa-bars " aria-hidden="true"></i>
-                </a>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Cerca..." aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Cerca</button>
+                </form>
             </div>
         </div>
-    </div>
+    </nav>
     <!-- /#header -->
 
     <div id="main">
