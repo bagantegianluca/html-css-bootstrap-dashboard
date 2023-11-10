@@ -60,9 +60,42 @@
                     <div class="d-flex justify-content-between">
                         <h3>Catalogo libri</h3>
                         <div class="div">
-                            <button class="btn btn-primary">Aggiungi libro</button>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#AddBook">Aggiungi libro</button>
                         </div>
                     </div>
+
+                    <div class="modal fade" id="AddBook" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Vuoi aggiungere un libro?</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="floatingInput"
+                                            placeholder="Inserisci il titolo">
+                                        <label for="floatingInput">Inserisci il titolo</label>
+                                    </div>
+                                    <select class="form-select" aria-label="Large select example">
+                                        <option selected>Inserisci lo stato</option>
+                                        <option value="1">Disponibile</option>
+                                        <option value="2">In prestito</option>
+                                        <option value="3">Non disponibile</option>
+                                    </select>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Annnulla</button>
+                                    <button type="button" class="btn btn-primary">Salva</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal -->
 
                     <table class="table table-striped">
                         <thead>
@@ -79,10 +112,56 @@
                                 <td class="d-none d-md-table-cell">-</td>
                                 <td><span class="badge text-bg-success">Disponibile</span></td>
                                 <td class="text-center">
-                                    <button class="btn btn-outline-secondary"><i
+
+                                    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasModify1" aria-controls="offcanvasModify1"><i
                                             class="fa-solid fa-pencil"></i></button>
-                                    <button class="btn btn-outline-secondary"><i
-                                            class="fa-solid fa-pencil"></i></button>
+
+                                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasModify1"
+                                        aria-labelledby="offcanvasExampleLabel">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Vuoi modificare il
+                                                titolo del libro <br><strong class="text-danger">I pilastri della
+                                                    terra</strong>?
+                                            </h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            <form class="form-floating">
+                                                <input type="text" class="form-control" id="floatingInputValue"
+                                                    placeholder="Inserisci il nuovo titolo"
+                                                    value="I pilastri della terra">
+                                                <label for="floatingInputValue">Inserisci il nuovo titolo</label>
+                                            </form>
+                                            <button type="button" class="btn btn-secondary">Annulla</button>
+                                            <button type="button" class="btn btn-primary">Salva</button>
+                                        </div>
+                                    </div>
+                                    <!-- /Button Modify -->
+
+                                    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasTrash1" aria-controls="offcanvasTrash1"><i
+                                            class="fa-solid fa-trash"></i></button>
+
+                                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasTrash1"
+                                        aria-labelledby="offcanvasExampleLabel">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Vuoi eliminare il
+                                                libro?</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            <div class="mb-3">
+                                                Il Libro <strong>I pilastri della terra</strong> verrà eliminato
+                                                definitivamente. Sei Sicuro?
+                                            </div>
+                                            <button type="button" class="btn btn-secondary">Annulla</button>
+                                            <button type="button" class="btn btn-danger">Elimina</button>
+                                        </div>
+                                    </div>
+                                    <!-- /Button Delete -->
                                 </td>
                             </tr>
                             <tr class="align-middle">
@@ -90,10 +169,55 @@
                                 <td class="d-none d-md-table-cell">-</td>
                                 <td><span class="badge text-bg-success">Disponibile</span></td>
                                 <td class="text-center">
-                                    <button class="btn btn-outline-secondary"><i
+
+                                    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasModify2" aria-controls="offcanvasModify2"><i
                                             class="fa-solid fa-pencil"></i></button>
-                                    <button class="btn btn-outline-secondary"><i
-                                            class="fa-solid fa-pencil"></i></button>
+
+                                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasModify2"
+                                        aria-labelledby="offcanvasExampleLabel">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Vuoi modificare il
+                                                titolo del libro <br><strong class="text-danger">I promessi
+                                                    sposi</strong>?
+                                            </h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            <form class="form-floating">
+                                                <input type="text" class="form-control" id="floatingInputValue"
+                                                    placeholder="Inserisci il nuovo titolo" value="I promessi sposi">
+                                                <label for="floatingInputValue">Inserisci il nuovo titolo</label>
+                                            </form>
+                                            <button type="button" class="btn btn-secondary">Annulla</button>
+                                            <button type="button" class="btn btn-primary">Salva</button>
+                                        </div>
+                                    </div>
+                                    <!-- /Button Modify -->
+
+                                    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasTrash2" aria-controls="offcanvasTrash2"><i
+                                            class="fa-solid fa-trash"></i></button>
+
+                                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasTrash2"
+                                        aria-labelledby="offcanvasExampleLabel">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Vuoi eliminare il
+                                                libro?</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            <div class="mb-3">
+                                                Il Libro <strong>I promessi sposi</strong> verrà eliminato
+                                                definitivamente. Sei Sicuro?
+                                            </div>
+                                            <button type="button" class="btn btn-secondary">Annulla</button>
+                                            <button type="button" class="btn btn-danger">Elimina</button>
+                                        </div>
+                                    </div>
+                                    <!-- /Button Delete -->
                                 </td>
                             </tr>
                             <tr class="align-middle">
@@ -101,10 +225,56 @@
                                 <td class="d-none d-md-table-cell">18/10/2023</td>
                                 <td><span class="badge text-bg-warning text-light">In prestito</span></td>
                                 <td class="text-center">
-                                    <button class="btn btn-outline-secondary"><i
+
+                                    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasModify3" aria-controls="offcanvasModify3"><i
                                             class="fa-solid fa-pencil"></i></button>
-                                    <button class="btn btn-outline-secondary"><i
-                                            class="fa-solid fa-pencil"></i></button>
+
+                                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasModify3"
+                                        aria-labelledby="offcanvasExampleLabel">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Vuoi modificare il
+                                                titolo del libro <br><strong class="text-danger">Il signore degli
+                                                    anelli</strong>?
+                                            </h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            <form class="form-floating">
+                                                <input type="text" class="form-control" id="floatingInputValue"
+                                                    placeholder="Inserisci il nuovo titolo"
+                                                    value="Il signore degli anelli">
+                                                <label for="floatingInputValue">Inserisci il nuovo titolo</label>
+                                            </form>
+                                            <button type="button" class="btn btn-secondary">Annulla</button>
+                                            <button type="button" class="btn btn-primary">Salva</button>
+                                        </div>
+                                    </div>
+                                    <!-- /Button Modify -->
+
+                                    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasTrash3" aria-controls="offcanvasTrash3"><i
+                                            class="fa-solid fa-trash"></i></button>
+
+                                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasTrash3"
+                                        aria-labelledby="offcanvasExampleLabel">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Vuoi eliminare il
+                                                libro?</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            <div class="mb-3">
+                                                Il Libro <strong>Il signore degli anelli</strong> verrà eliminato
+                                                definitivamente. Sei Sicuro?
+                                            </div>
+                                            <button type="button" class="btn btn-secondary">Annulla</button>
+                                            <button type="button" class="btn btn-danger">Elimina</button>
+                                        </div>
+                                    </div>
+                                    <!-- /Button Delete -->
                                 </td>
                             </tr>
                             <tr class="align-middle">
@@ -112,10 +282,57 @@
                                 <td class="d-none d-md-table-cell">-</td>
                                 <td><span class="badge text-bg-success">Disponibile</span></td>
                                 <td class="text-center">
-                                    <button class="btn btn-outline-secondary"><i
+
+                                    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasModify4" aria-controls="offcanvasModify4"><i
                                             class="fa-solid fa-pencil"></i></button>
-                                    <button class="btn btn-outline-secondary"><i
-                                            class="fa-solid fa-pencil"></i></button>
+
+                                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasModify4"
+                                        aria-labelledby="offcanvasExampleLabel">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Vuoi modificare il
+                                                titolo del libro <br><strong class="text-danger">Harry Potter e la
+                                                    pietra filosofale</strong>?
+                                            </h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            <form class="form-floating">
+                                                <input type="text" class="form-control" id="floatingInputValue"
+                                                    placeholder="Inserisci il nuovo titolo"
+                                                    value="Harry Potter e la pietra filosofale">
+                                                <label for="floatingInputValue">Inserisci il nuovo titolo</label>
+                                            </form>
+                                            <button type="button" class="btn btn-secondary">Annulla</button>
+                                            <button type="button" class="btn btn-primary">Salva</button>
+                                        </div>
+                                    </div>
+                                    <!-- /Button Modify -->
+
+                                    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasTrash4" aria-controls="offcanvasTrash4"><i
+                                            class="fa-solid fa-trash"></i></button>
+
+                                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasTrash4"
+                                        aria-labelledby="offcanvasExampleLabel">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Vuoi eliminare il
+                                                libro?</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            <div class="mb-3">
+                                                Il Libro <strong>Harry Potter e la pietra filosofale</strong> verrà
+                                                eliminato
+                                                definitivamente. Sei Sicuro?
+                                            </div>
+                                            <button type="button" class="btn btn-secondary">Annulla</button>
+                                            <button type="button" class="btn btn-danger">Elimina</button>
+                                        </div>
+                                    </div>
+                                    <!-- /Button Delete -->
                                 </td>
                             </tr>
                             <tr class="align-middle">
@@ -123,10 +340,56 @@
                                 <td class="d-none d-md-table-cell">-</td>
                                 <td><span class="badge text-bg-danger">Non disponibile</span></td>
                                 <td class="text-center">
-                                    <button class="btn btn-outline-secondary"><i
+
+                                    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasModify5" aria-controls="offcanvasModify5"><i
                                             class="fa-solid fa-pencil"></i></button>
-                                    <button class="btn btn-outline-secondary"><i
-                                            class="fa-solid fa-pencil"></i></button>
+
+                                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasModify5"
+                                        aria-labelledby="offcanvasExampleLabel">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Vuoi modificare il
+                                                titolo del libro <br><strong class="text-danger">Il codice Da
+                                                    Vinci</strong>?
+                                            </h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            <form class="form-floating">
+                                                <input type="text" class="form-control" id="floatingInputValue"
+                                                    placeholder="Inserisci il nuovo titolo" value="Il codice Da Vinci">
+                                                <label for="floatingInputValue">Inserisci il nuovo titolo</label>
+                                            </form>
+                                            <button type="button" class="btn btn-secondary">Annulla</button>
+                                            <button type="button" class="btn btn-primary">Salva</button>
+                                        </div>
+                                    </div>
+                                    <!-- /Button Modify -->
+
+                                    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasTrash5" aria-controls="offcanvasTrash5"><i
+                                            class="fa-solid fa-trash"></i></button>
+
+                                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasTrash5"
+                                        aria-labelledby="offcanvasExampleLabel">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Vuoi eliminare il
+                                                libro?</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            <div class="mb-3">
+                                                Il Libro <strong>Il codice Da Vinci</strong> verrà
+                                                eliminato
+                                                definitivamente. Sei Sicuro?
+                                            </div>
+                                            <button type="button" class="btn btn-secondary">Annulla</button>
+                                            <button type="button" class="btn btn-danger">Elimina</button>
+                                        </div>
+                                    </div>
+                                    <!-- /Button Delete -->
                                 </td>
                             </tr>
                             <tr class="align-middle">
@@ -134,10 +397,55 @@
                                 <td class="d-none d-md-table-cell">-</td>
                                 <td><span class="badge text-bg-success">Disponibile</span></td>
                                 <td class="text-center">
-                                    <button class="btn btn-outline-secondary"><i
+
+                                    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasModify6" aria-controls="offcanvasModify6"><i
                                             class="fa-solid fa-pencil"></i></button>
-                                    <button class="btn btn-outline-secondary"><i
-                                            class="fa-solid fa-pencil"></i></button>
+
+                                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasModify6"
+                                        aria-labelledby="offcanvasExampleLabel">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Vuoi modificare il
+                                                titolo del libro <br><strong class="text-danger">Shining</strong>?
+                                            </h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            <form class="form-floating">
+                                                <input type="text" class="form-control" id="floatingInputValue"
+                                                    placeholder="Inserisci il nuovo titolo" value="Shining">
+                                                <label for="floatingInputValue">Inserisci il nuovo titolo</label>
+                                            </form>
+                                            <button type="button" class="btn btn-secondary">Annulla</button>
+                                            <button type="button" class="btn btn-primary">Salva</button>
+                                        </div>
+                                    </div>
+                                    <!-- /Button Modify -->
+
+                                    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasTrash6" aria-controls="offcanvasTrash6"><i
+                                            class="fa-solid fa-trash"></i></button>
+
+                                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasTrash6"
+                                        aria-labelledby="offcanvasExampleLabel">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Vuoi eliminare il
+                                                libro?</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            <div class="mb-3">
+                                                Il Libro <strong>Shining</strong> verrà
+                                                eliminato
+                                                definitivamente. Sei Sicuro?
+                                            </div>
+                                            <button type="button" class="btn btn-secondary">Annulla</button>
+                                            <button type="button" class="btn btn-danger">Elimina</button>
+                                        </div>
+                                    </div>
+                                    <!-- /Button Delete -->
                                 </td>
                             </tr>
                             <tr class="align-middle">
@@ -145,10 +453,56 @@
                                 <td class="d-none d-md-table-cell">21/09/2023</td>
                                 <td><span class="badge text-bg-warning text-light">In prestito</span></td>
                                 <td class="text-center">
-                                    <button class="btn btn-outline-secondary"><i
+
+                                    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasModify7" aria-controls="offcanvasModify7"><i
                                             class="fa-solid fa-pencil"></i></button>
-                                    <button class="btn btn-outline-secondary"><i
-                                            class="fa-solid fa-pencil"></i></button>
+
+                                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasModify7"
+                                        aria-labelledby="offcanvasExampleLabel">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Vuoi modificare il
+                                                titolo del libro <br><strong class="text-danger">La divina
+                                                    commedia</strong>?
+                                            </h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            <form class="form-floating">
+                                                <input type="text" class="form-control" id="floatingInputValue"
+                                                    placeholder="Inserisci il nuovo titolo" value="La divina commedia">
+                                                <label for="floatingInputValue">Inserisci il nuovo titolo</label>
+                                            </form>
+                                            <button type="button" class="btn btn-secondary">Annulla</button>
+                                            <button type="button" class="btn btn-primary">Salva</button>
+                                        </div>
+                                    </div>
+                                    <!-- /Button Modify -->
+
+                                    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasTrash7" aria-controls="offcanvasTrash7"><i
+                                            class="fa-solid fa-trash"></i></button>
+
+                                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasTrash7"
+                                        aria-labelledby="offcanvasExampleLabel">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Vuoi eliminare il
+                                                libro?</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            <div class="mb-3">
+                                                Il Libro <strong>La divina commedia</strong> verrà
+                                                eliminato
+                                                definitivamente. Sei Sicuro?
+                                            </div>
+                                            <button type="button" class="btn btn-secondary">Annulla</button>
+                                            <button type="button" class="btn btn-danger">Elimina</button>
+                                        </div>
+                                    </div>
+                                    <!-- /Button Delete -->
                                 </td>
                             </tr>
                             <tr class="align-middle">
@@ -156,10 +510,56 @@
                                 <td class="d-none d-md-table-cell">-</td>
                                 <td><span class="badge text-bg-success">Disponibile</span></td>
                                 <td class="text-center">
-                                    <button class="btn btn-outline-secondary"><i
+
+                                    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasModify8" aria-controls="offcanvasModify8"><i
                                             class="fa-solid fa-pencil"></i></button>
-                                    <button class="btn btn-outline-secondary"><i
-                                            class="fa-solid fa-pencil"></i></button>
+
+                                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasModify8"
+                                        aria-labelledby="offcanvasExampleLabel">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Vuoi modificare il
+                                                titolo del libro <br><strong class="text-danger">Il trono di
+                                                    spade</strong>?
+                                            </h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            <form class="form-floating">
+                                                <input type="text" class="form-control" id="floatingInputValue"
+                                                    placeholder="Inserisci il nuovo titolo" value="Il trono di spade">
+                                                <label for="floatingInputValue">Inserisci il nuovo titolo</label>
+                                            </form>
+                                            <button type="button" class="btn btn-secondary">Annulla</button>
+                                            <button type="button" class="btn btn-primary">Salva</button>
+                                        </div>
+                                    </div>
+                                    <!-- /Button Modify -->
+
+                                    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasTrash8" aria-controls="offcanvasTrash8"><i
+                                            class="fa-solid fa-trash"></i></button>
+
+                                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasTrash8"
+                                        aria-labelledby="offcanvasExampleLabel">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Vuoi eliminare il
+                                                libro?</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            <div class="mb-3">
+                                                Il Libro <strong>Il trono di spade</strong> verrà
+                                                eliminato
+                                                definitivamente. Sei Sicuro?
+                                            </div>
+                                            <button type="button" class="btn btn-secondary">Annulla</button>
+                                            <button type="button" class="btn btn-danger">Elimina</button>
+                                        </div>
+                                    </div>
+                                    <!-- /Button Delete -->
                                 </td>
                             </tr>
                             <tr class="align-middle">
@@ -167,10 +567,56 @@
                                 <td class="d-none d-md-table-cell">-</td>
                                 <td><span class="badge text-bg-danger">Non disponibile</span></td>
                                 <td class="text-center">
-                                    <button class="btn btn-outline-secondary"><i
+
+                                    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasModify9" aria-controls="offcanvasModify9"><i
                                             class="fa-solid fa-pencil"></i></button>
-                                    <button class="btn btn-outline-secondary"><i
-                                            class="fa-solid fa-pencil"></i></button>
+
+                                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasModify9"
+                                        aria-labelledby="offcanvasExampleLabel">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Vuoi modificare il
+                                                titolo del libro <br><strong class="text-danger">Il mondo di
+                                                    Sofia</strong>?
+                                            </h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            <form class="form-floating">
+                                                <input type="text" class="form-control" id="floatingInputValue"
+                                                    placeholder="Inserisci il nuovo titolo" value="Il mondo di Sofia">
+                                                <label for="floatingInputValue">Inserisci il nuovo titolo</label>
+                                            </form>
+                                            <button type="button" class="btn btn-secondary">Annulla</button>
+                                            <button type="button" class="btn btn-primary">Salva</button>
+                                        </div>
+                                    </div>
+                                    <!-- /Button Modify -->
+
+                                    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasTrash9" aria-controls="offcanvasTrash9"><i
+                                            class="fa-solid fa-trash"></i></button>
+
+                                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasTrash9"
+                                        aria-labelledby="offcanvasExampleLabel">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Vuoi eliminare il
+                                                libro?</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            <div class="mb-3">
+                                                Il Libro <strong>Il mondo di Sofia</strong> verrà
+                                                eliminato
+                                                definitivamente. Sei Sicuro?
+                                            </div>
+                                            <button type="button" class="btn btn-secondary">Annulla</button>
+                                            <button type="button" class="btn btn-danger">Elimina</button>
+                                        </div>
+                                    </div>
+                                    <!-- /Button Delete -->
                                 </td>
                             </tr>
                             <tr class="align-middle">
@@ -178,10 +624,58 @@
                                 <td class="d-none d-md-table-cell">25/07/2023</td>
                                 <td><span class="badge text-bg-warning text-light">In prestito</span></td>
                                 <td class="text-center">
-                                    <button class="btn btn-outline-secondary"><i
+
+                                    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasModify10" aria-controls="offcanvasModify10"><i
                                             class="fa-solid fa-pencil"></i></button>
-                                    <button class="btn btn-outline-secondary"><i
-                                            class="fa-solid fa-pencil"></i></button>
+
+                                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasModify10"
+                                        aria-labelledby="offcanvasExampleLabel">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Vuoi modificare il
+                                                titolo del libro <br><strong class="text-danger">Le cronache di Narnia:
+                                                    il leone, la strega e l'armadio</strong>?
+                                            </h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            <form class="form-floating">
+                                                <input type="text" class="form-control" id="floatingInputValue"
+                                                    placeholder="Inserisci il nuovo titolo"
+                                                    value="Le cronache di Narnia: il leone, la strega e l'armadio">
+                                                <label for="floatingInputValue">Inserisci il nuovo titolo</label>
+                                            </form>
+                                            <button type="button" class="btn btn-secondary">Annulla</button>
+                                            <button type="button" class="btn btn-primary">Salva</button>
+                                        </div>
+                                    </div>
+                                    <!-- /Button Modify -->
+
+                                    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasTrash10" aria-controls="offcanvasTrash10"><i
+                                            class="fa-solid fa-trash"></i></button>
+
+                                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasTrash10"
+                                        aria-labelledby="offcanvasExampleLabel">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Vuoi eliminare il
+                                                libro?</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            <div class="mb-3">
+                                                Il Libro <strong>Le cronache di Narnia: il leone, la strega e
+                                                    l'armadi</strong> verrà
+                                                eliminato
+                                                definitivamente. Sei Sicuro?
+                                            </div>
+                                            <button type="button" class="btn btn-secondary">Annulla</button>
+                                            <button type="button" class="btn btn-danger">Elimina</button>
+                                        </div>
+                                    </div>
+                                    <!-- /Button Delete -->
                                 </td>
                             </tr>
                             <tr class="align-middle">
@@ -189,10 +683,56 @@
                                 <td class="d-none d-md-table-cell">-</td>
                                 <td><span class="badge text-bg-success">Disponibile</span></td>
                                 <td class="text-center">
-                                    <button class="btn btn-outline-secondary"><i
+
+                                    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasModify11" aria-controls="offcanvasModify11"><i
                                             class="fa-solid fa-pencil"></i></button>
-                                    <button class="btn btn-outline-secondary"><i
-                                            class="fa-solid fa-pencil"></i></button>
+
+                                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasModify11"
+                                        aria-labelledby="offcanvasExampleLabel">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Vuoi modificare il
+                                                titolo del libro <br><strong class="text-danger">Il piccolo
+                                                    principe</strong>?
+                                            </h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            <form class="form-floating">
+                                                <input type="text" class="form-control" id="floatingInputValue"
+                                                    placeholder="Inserisci il nuovo titolo" value="Il piccolo principe">
+                                                <label for="floatingInputValue">Inserisci il nuovo titolo</label>
+                                            </form>
+                                            <button type="button" class="btn btn-secondary">Annulla</button>
+                                            <button type="button" class="btn btn-primary">Salva</button>
+                                        </div>
+                                    </div>
+                                    <!-- /Button Modify -->
+
+                                    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasTrash11" aria-controls="offcanvasTrash11"><i
+                                            class="fa-solid fa-trash"></i></button>
+
+                                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasTrash11"
+                                        aria-labelledby="offcanvasExampleLabel">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Vuoi eliminare il
+                                                libro?</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            <div class="mb-3">
+                                                Il Libro <strong>Il piccolo principe</strong> verrà
+                                                eliminato
+                                                definitivamente. Sei Sicuro?
+                                            </div>
+                                            <button type="button" class="btn btn-secondary">Annulla</button>
+                                            <button type="button" class="btn btn-danger">Elimina</button>
+                                        </div>
+                                    </div>
+                                    <!-- /Button Delete -->
                                 </td>
                             </tr>
                             <tr class="align-middle">
@@ -200,10 +740,56 @@
                                 <td class="d-none d-md-table-cell">-</td>
                                 <td><span class="badge text-bg-success">Disponibile</span></td>
                                 <td class="text-center">
-                                    <button class="btn btn-outline-secondary"><i
+
+                                    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasModify12" aria-controls="offcanvasModify12"><i
                                             class="fa-solid fa-pencil"></i></button>
-                                    <button class="btn btn-outline-secondary"><i
-                                            class="fa-solid fa-pencil"></i></button>
+
+                                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasModify12"
+                                        aria-labelledby="offcanvasExampleLabel">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Vuoi modificare il
+                                                titolo del libro <br><strong class="text-danger">La storia
+                                                    infinita</strong>?
+                                            </h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            <form class="form-floating">
+                                                <input type="text" class="form-control" id="floatingInputValue"
+                                                    placeholder="Inserisci il nuovo titolo" value="La storia infinita">
+                                                <label for="floatingInputValue">Inserisci il nuovo titolo</label>
+                                            </form>
+                                            <button type="button" class="btn btn-secondary">Annulla</button>
+                                            <button type="button" class="btn btn-primary">Salva</button>
+                                        </div>
+                                    </div>
+                                    <!-- /Button Modify -->
+
+                                    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasTrash12" aria-controls="offcanvasTrash12"><i
+                                            class="fa-solid fa-trash"></i></button>
+
+                                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasTrash12"
+                                        aria-labelledby="offcanvasExampleLabel">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Vuoi eliminare il
+                                                libro?</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            <div class="mb-3">
+                                                Il Libro <strong>La storia infinita</strong> verrà
+                                                eliminato
+                                                definitivamente. Sei Sicuro?
+                                            </div>
+                                            <button type="button" class="btn btn-secondary">Annulla</button>
+                                            <button type="button" class="btn btn-danger">Elimina</button>
+                                        </div>
+                                    </div>
+                                    <!-- /Button Delete -->
                                 </td>
                             </tr>
                         </tbody>
