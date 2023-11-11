@@ -158,12 +158,33 @@
                                                 definitivamente. Sei Sicuro?
                                             </div>
                                             <button type="button" class="btn btn-secondary">Annulla</button>
-                                            <button type="button" class="btn btn-danger">Elimina</button>
+                                            <button type="button" class="btn btn-danger"
+                                                id="liveToastBtn">Elimina</button>
+
+                                            <div class="toast-container position-fixed top-0 start-0 p-3">
+                                                <div id="liveToast" class="toast" role="alert" aria-live="assertive"
+                                                    aria-atomic="true">
+                                                    <div class="toast-header">
+                                                        <img src="..." class="rounded me-2" alt="...">
+                                                        <strong class="me-auto">Libro eliminato!</strong>
+                                                        <small>11 mins ago</small>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="toast"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="toast-body">
+                                                        Il libro <strong>I pilastri della terra</strong> è stato
+                                                        eliminato.
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                         </div>
                                     </div>
                                     <!-- /Button Delete -->
                                 </td>
                             </tr>
+                            <!-- /Row 1 -->
+
                             <tr class="align-middle">
                                 <td>I promessi sposi</td>
                                 <td class="d-none d-md-table-cell">-</td>
@@ -220,6 +241,8 @@
                                     <!-- /Button Delete -->
                                 </td>
                             </tr>
+                            <!-- /Row 2 -->
+
                             <tr class="align-middle">
                                 <td>Il signore degli anelli</td>
                                 <td class="d-none d-md-table-cell">18/10/2023</td>
@@ -277,6 +300,8 @@
                                     <!-- /Button Delete -->
                                 </td>
                             </tr>
+                            <!-- /Row 3 -->
+
                             <tr class="align-middle">
                                 <td>Harry Potter e la pietra filosofale</td>
                                 <td class="d-none d-md-table-cell">-</td>
@@ -335,6 +360,8 @@
                                     <!-- /Button Delete -->
                                 </td>
                             </tr>
+                            <!-- /Row 4 -->
+
                             <tr class="align-middle">
                                 <td>Il codice Da Vinci</td>
                                 <td class="d-none d-md-table-cell">-</td>
@@ -392,6 +419,8 @@
                                     <!-- /Button Delete -->
                                 </td>
                             </tr>
+                            <!-- /Row 5 -->
+
                             <tr class="align-middle">
                                 <td>Shining</td>
                                 <td class="d-none d-md-table-cell">-</td>
@@ -448,6 +477,8 @@
                                     <!-- /Button Delete -->
                                 </td>
                             </tr>
+                            <!-- /Row 6 -->
+
                             <tr class="align-middle">
                                 <td>La divina commedia</td>
                                 <td class="d-none d-md-table-cell">21/09/2023</td>
@@ -505,6 +536,8 @@
                                     <!-- /Button Delete -->
                                 </td>
                             </tr>
+                            <!-- /Row 7 -->
+
                             <tr class="align-middle">
                                 <td>Il trono di spade</td>
                                 <td class="d-none d-md-table-cell">-</td>
@@ -562,6 +595,8 @@
                                     <!-- /Button Delete -->
                                 </td>
                             </tr>
+                            <!-- /Row 8 -->
+
                             <tr class="align-middle">
                                 <td>Il mondo di Sofia</td>
                                 <td class="d-none d-md-table-cell">-</td>
@@ -619,6 +654,8 @@
                                     <!-- /Button Delete -->
                                 </td>
                             </tr>
+                            <!-- /Row 9 -->
+
                             <tr class="align-middle">
                                 <td>Le cronache di Narnia: il leone, la strega e l'armadio</td>
                                 <td class="d-none d-md-table-cell">25/07/2023</td>
@@ -678,6 +715,8 @@
                                     <!-- /Button Delete -->
                                 </td>
                             </tr>
+                            <!-- /Row 10 -->
+
                             <tr class="align-middle">
                                 <td>Il piccolo principe</td>
                                 <td class="d-none d-md-table-cell">-</td>
@@ -735,6 +774,8 @@
                                     <!-- /Button Delete -->
                                 </td>
                             </tr>
+                            <!-- /Row 11 -->
+
                             <tr class="align-middle">
                                 <td>La storia infinita</td>
                                 <td class="d-none d-md-table-cell">-</td>
@@ -792,8 +833,11 @@
                                     <!-- /Button Delete -->
                                 </td>
                             </tr>
+                            <!-- /Row 12 -->
+
                         </tbody>
                     </table>
+                    <!-- /.table -->
 
                 </div>
                 <!-- /.main-left -->
@@ -806,32 +850,30 @@
                         </div>
                         <div class="card-body">
                             <div class="card">
-                                <div class="form-check">
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item"><input class="form-check-input" type="checkbox"
-                                                value="" id="flexCheckDefault1">
-                                            <label class="form-check-label" for="flexCheckDefault1">
-                                                Chiamare segreteria
-                                            </label>
-                                        </li>
-                                        <li class="list-group-item"><input class="form-check-input" type="checkbox"
-                                                value="" id="flexCheckDefault2">
-                                            <label class="form-check-label" for="flexCheckDefault2">
-                                                Mandare avvisi prestiti scaduti
-                                            </label>
-                                        </li>
-                                        <li class="list-group-item"><input class="form-check-input" type="checkbox"
-                                                value="" id="flexCheckDefault3">
-                                            <label class="form-check-label" for="flexCheckDefault3">
-                                                Ordinare nuovi libri
-                                            </label>
-                                        </li>
-                                    </ul>
-                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><input class="form-check-input" type="checkbox" value=""
+                                            id="flexCheckDefault1">
+                                        <label class="form-check-label" for="flexCheckDefault1">
+                                            Chiamare segreteria
+                                        </label>
+                                    </li>
+                                    <li class="list-group-item"><input class="form-check-input" type="checkbox" value=""
+                                            id="flexCheckDefault2">
+                                        <label class="form-check-label" for="flexCheckDefault2">
+                                            Mandare avvisi prestiti scaduti
+                                        </label>
+                                    </li>
+                                    <li class="list-group-item"><input class="form-check-input" type="checkbox" value=""
+                                            id="flexCheckDefault3">
+                                        <label class="form-check-label" for="flexCheckDefault3">
+                                            Ordinare nuovi libri
+                                        </label>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-                    <!-- /.card ToDo -->
+                    <!-- /Todo -->
 
                     <div class="card mt-4">
                         <div class="card-header">
@@ -909,6 +951,17 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+    <script>
+        const toastTrigger = document.getElementById('liveToastBtn')
+        const toastLiveExample = document.getElementById('liveToast')
+
+        if (toastTrigger) {
+            const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+            toastTrigger.addEventListener('click', () => {
+                toastBootstrap.show()
+            })
+        }
+    </script>
 </body>
 
 </html>
